@@ -5,19 +5,12 @@ function destination(location, landmarks, notes, image) {
   this.image = image;
 }
 
-/*Contact.prototype.fullName = function() {
-  return this.firstName + " " + this.lastName;
-}*/
-
-$(document).ready(function(){
+$(document).ready(function() {
   var destinationArray = [];
   var itemsCreated = 0;
-  var width = $(window).width();
-
+  var width = $(window).width()-40;
   $("button").click(function() {
-    width = $(window).width()-40;
     var maxAmountOfRowItems = parseInt(width/300);
-    //itemsCreated++;
     var location = $("#location").val();
     var landmarks = $("#landmarks").val();
     var image = $("#image").val();
@@ -26,22 +19,24 @@ $(document).ready(function(){
     destinationArray.push(newDestination);
     $(".results").append("<div class='items'>"+"<img class='place' src='"+newDestination.image+"' alt='"+location+"'>");
     $(".items").last().click(function() {
+      $(".belowRow").remove();
       var indexOfItem = $(this).index();
       var elements = $(".items");
       var amountOfElements = elements.length+1;
       var rowcount = maxAmountOfRowItems;
-      alert("rowcount: "+rowcount+" amountOfElements: "+elements.length);
       for (var i = 0; i <= amountOfElements; i++) {
-          console.log(i);
         if (i==rowcount) {
-          $(".items:nth-child("+rowcount+")").after("<p>test</p>");
+          $(".items:nth-child("+rowcount+")").after("<div class='belowRow'><h3>"+newDestination.location+"</h3><p>"+newDestination.landmarks+"</p> <p>"+newDestination.notes+"</p></div>");
           rowcount = rowcount + maxAmountOfRowItems + 1;
         }
       }
       if (elements.length % maxAmountOfRowItems === 0) {}
       else {
-        $(".results").append("<p>test</p>");
+        $(".results").append("<div class='belowRow'><h3>"+newDestination.location+"</h3><p>"+newDestination.landmarks+"</p> <p>"+newDestination.notes+"</p></div>");
       }
+    });
+    $(".items").click(function() {
+      $(this).nextAll(".belowRow").first().show();
     });
   })
 })

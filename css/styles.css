@@ -13,9 +13,11 @@
   /*height: 400px;*/
 }
 img {
-  min-height: 185px;
+  height: 185px;
   width: 300px;
   max-height:185px;
   border: 1px solid black;
   color: #fff;
 }
+
+.belowRow {display:none}
