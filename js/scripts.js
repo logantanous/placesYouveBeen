@@ -26,13 +26,13 @@ $(document).ready(function() {
       var rowcount = maxAmountOfRowItems;
       for (var i = 0; i <= amountOfElements; i++) {
         if (i==rowcount) {
-          $(".items:nth-child("+rowcount+")").after("<div class='belowRow'><h3>"+newDestination.location+"</h3><p>"+newDestination.landmarks+"</p> <p>"+newDestination.notes+"</p></div>");
+          $(".items:nth-child("+rowcount+")").after("<div class='belowRow'><div class='container'><div class='row'><div class='col-6'><img src='"+newDestination.image+"'></div><div class='col-6'><h3>"+newDestination.location+"</h3><p>"+newDestination.landmarks+"</p> <p>"+newDestination.notes+"</p></div></div></div></div>");
           rowcount = rowcount + maxAmountOfRowItems + 1;
         }
       }
       if (elements.length % maxAmountOfRowItems === 0) {}
       else {
-        $(".results").append("<div class='belowRow'><h3>"+newDestination.location+"</h3><p>"+newDestination.landmarks+"</p> <p>"+newDestination.notes+"</p></div>");
+        $(".results").append("<div class='belowRow'><div class='container'><div class='row'><div class='col'><img src='"+newDestination.image+"'></div><div class='col'><h3>"+newDestination.location+"</h3><p>"+newDestination.landmarks+"</p> <p>"+newDestination.notes+"</p></div></div></div></div>");
       }
     });
     $(".items").click(function() {

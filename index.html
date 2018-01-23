@@ -4,22 +4,38 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/scripts.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://getbootstrap.com/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <meta charset="utf-8">
     <title></title>
   </head>
   <body>
     <form class="" action="index.html" method="post">
-      <p>Location</p>
-      <input id="location" type="text" name="" value="location">
-      <p>Landmarks</p>
-      <input id="landmarks" type="text" name="" value="landmarks">
-      <p>Image</p>
-      <input id="image" type="text" name="" value="">
-      <p>Notes</p>
-      <input id="notes" type="text" name="" value="notey note">
-      <button type="button" name="button">Submit</button>
+      <div class="container">
+        <div class="row">
+            <div class="col-sm">
+              Location<br>
+              <input id="location" type="text" name="" value="">
+            </div>
+            <div class="col-sm">
+              Landmarks<br>
+              <input id="landmarks" type="text" name="" value="">
+            </div>
+            <div class="col-sm">
+              Image<br>
+              <input id="image" type="text" name="" value="">
+            </div>
+            <div class="col-sm">
+              Notes<br>
+              <input id="notes" type="text" name="" value="">
+            </div>
+
+            <div class="col-sm">
+              <br>
+              <button type="button" name="button">Submit</button>
+            </div>
+    </div>
+  </div>
     </form>
     <div class="results">
     </div>
